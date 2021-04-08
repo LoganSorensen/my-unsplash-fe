@@ -170,6 +170,7 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 7.5em;
 }
 .header .logo-and-search {
   display: flex;
@@ -215,4 +216,19 @@ body {
   border: none;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
+}
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 4.5em;
+  align-items: start;
+}
+.photo-gallery .column {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-row-gap: 4.5em;
+}
+.photo-gallery .photo img {
+  border-radius: 16px;
+  max-width: 100%;
 }
