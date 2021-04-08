@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .logo-and-search {
+    display: flex;
+    align-items: center;
+
+
+    form {
+      height: 5.5em;
+      width: 30rem;
+      margin-left: 2.4em;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      svg {
+          position: absolute;
+          left: 1.9rem;
+        color: #bdbdbd;
+        width: 1.7rem;
+        height: 1.7rem;
+        z-index: 1;
+      }
+    }
+
+    input {
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+      max-height: 100%;
+      width: 100%;
+      padding: 1.8em;
+      padding-left: 1.8em + 1.9em;
+      border: 1px solid #bdbdbd;
+      border-radius: 12px;
+      filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
+      &::placeholder {
+        color: #bdbdbd;
+      }
+    }
+  }
+
+  button {
+    background-color: #3db46d;
+    color: white;
+    font-weight: 700;
+    font-size: 1.6rem;
+    padding: 0 1.4em;
+    border: none;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+}
