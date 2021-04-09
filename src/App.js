@@ -24,8 +24,8 @@ function App() {
   };
 
   const addImage = (image) => {
-    setImages([image, ...images])
-  }
+    setImages([image, ...images]);
+  };
 
   const removeImage = (id) => {
     const filteredImages = images.filter((image) => image._id !== id);
@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <Header />
       <PhotoGallery images={images} setImage={setImage} />
-      <AddPhotoModal addImage={addImage}/>
+      <AddPhotoModal addImage={addImage} />
       <DeletePhotoModal
         selectedImageId={selectedImageId}
         removeImage={removeImage}

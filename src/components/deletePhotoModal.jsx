@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const DeletePhotoModal = (props) => {
-  const handleChange = (e) => {};
+  const [auth, setAuth] = useState({
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setAuth({ password: e.target.value });
+  };
 
   const closeModal = () => {
     const blackout = document.querySelector(".body-blackout");
@@ -15,14 +21,15 @@ const DeletePhotoModal = (props) => {
 
   const deletePhoto = (e) => {
     e.preventDefault();
-    console.log(props.selectedImageId);
     axios
-      .delete(`http://localhost:5000/images/${props.selectedImageId}`)
+      .delete(`http://localhost:5000/images/${props.selectedImageId}`, {
+        data: auth,
+      })
       .then((res) => {
-        console.log(res);
+        props.removeImage(props.selectedImageId);
+        setAuth({ password: "" });
       })
       .catch((err) => console.log(err));
-    props.removeImage(props.selectedImageId);
     closeModal();
   };
 
@@ -36,6 +43,7 @@ const DeletePhotoModal = (props) => {
           name="password"
           id="delete-pw"
           placeholder="*********"
+          value={auth.password}
           onChange={handleChange}
         />
         <div className="buttons">

@@ -21,8 +21,7 @@ const AddPhotoModal = (props) => {
     axios
       .post("http://localhost:5000/images", newPhoto)
       .then((res) => {
-        console.log(res);
-        props.addImage(res.data.image)
+        props.addImage(res.data.image);
         setNewPhoto({ name: "", url: "" });
       })
       .catch((err) => console.log(err));
