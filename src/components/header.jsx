@@ -6,12 +6,15 @@ import Search from "./search";
 const Header = () => {
   const openModal = () => {
     const blackout = document.querySelector(".body-blackout");
-    const addPhotoModal = document.querySelector('.add-photo-modal');
-
+    const addPhotoModal = document.querySelector(".add-photo-modal");
 
     document.body.classList.add("no-scroll");
+    
     blackout.style.display = "block";
-    addPhotoModal.style.display = 'block';
+    blackout.style.top = `${window.scrollY}px`;
+
+    addPhotoModal.style.display = "block";
+    addPhotoModal.style.top = `${window.scrollY + window.innerHeight / 4}px`;
   };
 
   return (
