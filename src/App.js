@@ -3,7 +3,8 @@ import axios from "axios";
 
 import Header from "./components/header";
 import PhotoGallery from "./components/photoGallery";
-import AddPhotoModal from './components/addPhotoModal'
+import AddPhotoModal from "./components/addPhotoModal";
+import DeletePhotoModal from "./components/deletePhotoModal";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -22,6 +23,7 @@ function App() {
       <Header />
       <PhotoGallery images={images} />
       <AddPhotoModal />
+      <DeletePhotoModal />
     </div>
   );
 }

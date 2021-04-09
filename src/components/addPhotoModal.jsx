@@ -34,7 +34,7 @@ const AddPhotoModal = () => {
   };
 
   return (
-    <div className="add-photo-modal">
+    <div className="modal add-photo-modal">
       <h3>Add a new photo</h3>
       <form onSubmit={addPhoto}>
         <label htmlFor="photo-label">Label</label>

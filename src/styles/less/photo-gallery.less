@@ -11,9 +11,52 @@
   }
 
   .photo {
+    position: relative;
+    &:hover .img-overlay {
+      display: flex;
+    }
+
     img {
       border-radius: 16px;
       max-width: 100%;
+    }
+  }
+
+  .img-overlay {
+    display: none;
+    // display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    font-family: "Montserrat", sans-serif;
+    background: rgba(0, 0, 0, 0.38);
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    z-index: 1;
+
+    .delete-btn-cont {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    button {
+      color: #eb5757;
+      border: 1px solid #eb5757;
+      border-radius: 38px;
+      background-color: transparent;
+      margin: 1.8rem;
+      width: 6.3rem;
+      cursor: pointer;
+    }
+
+    p {
+      color: white;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+      max-width: 100%;
+      padding: 0 2.4rem 3.2rem;
     }
   }
 }
