@@ -1,0 +1,72 @@
+.add-photo-modal {
+  display: none;
+  position: absolute;
+  margin: auto;
+  top: 30vh;
+  left: 0;
+  right: 0;
+  width: 70rem;
+  padding: 2.4em 3.2em;
+  background-color: white;
+  //   border: 1px solid red;
+  border-radius: 12px;
+  z-index: 3;
+
+  h3 {
+    font-size: 2.4rem;
+    color: #333333;
+    margin-bottom: 2.1rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-size: 1.4rem;
+    color: #4f4f4f;
+    margin-bottom: 0.9em;
+  }
+
+  input {
+    height: 5.5rem;
+    max-height: 5.5rem;
+    margin-bottom: 1.8em;
+    padding: 0 1.8em;
+    border: 1px solid #4f4f4f;
+    border-radius: 12px;
+    filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
+    &::placeholder {
+      color: #bdbdbd;
+    }
+  }
+
+  .buttons {
+    text-align: end;
+    height: 5.5rem;
+
+    button {
+      font-size: 1.6rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cancel-btn {
+      color: #bdbdbd;
+      background-color: transparent;
+      padding: 0;
+      margin-right: 2.4rem;
+    }
+
+    .submit-btn {
+      color: white;
+      background-color: #3db46d;
+      width: 10rem;
+      height: 100%;
+      font-weight: 700;
+      border-radius: 12px;
+      box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

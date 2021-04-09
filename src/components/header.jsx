@@ -4,7 +4,15 @@ import { ReactComponent as Logo } from "../assets/my_unsplash_logo.svg";
 import Search from "./search";
 
 const Header = () => {
-  const addPhoto = () => {};
+  const openModal = () => {
+    const blackout = document.querySelector(".body-blackout");
+    const addPhotoModal = document.querySelector('.add-photo-modal');
+
+
+    document.body.classList.add("no-scroll");
+    blackout.style.display = "block";
+    addPhotoModal.style.display = 'block';
+  };
 
   return (
     <div className="header">
@@ -12,7 +20,7 @@ const Header = () => {
         <Logo />
         <Search />
       </div>
-      <button onClick={addPhoto}>Add a photo</button>
+      <button onClick={openModal}>Add a photo</button>
     </div>
   );
 };

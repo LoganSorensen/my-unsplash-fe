@@ -134,7 +134,7 @@ html {
 }
 *,
 html {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 @font-face {
   font-family: 'Montserrat';
@@ -166,6 +166,21 @@ html {
 }
 body {
   padding: 3em 9em;
+}
+.no-scroll {
+  height: 100vh;
+  overflow: hidden;
+  padding-right: 10.7em;
+}
+.body-blackout {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2;
 }
 .header {
   display: flex;
@@ -231,4 +246,67 @@ body {
 .photo-gallery .photo img {
   border-radius: 16px;
   max-width: 100%;
+}
+.add-photo-modal {
+  display: none;
+  position: absolute;
+  margin: auto;
+  top: 30vh;
+  left: 0;
+  right: 0;
+  width: 70rem;
+  padding: 2.4em 3.2em;
+  background-color: white;
+  border-radius: 12px;
+  z-index: 3;
+}
+.add-photo-modal h3 {
+  font-size: 2.4rem;
+  color: #333333;
+  margin-bottom: 2.1rem;
+}
+.add-photo-modal form {
+  display: flex;
+  flex-direction: column;
+}
+.add-photo-modal label {
+  font-size: 1.4rem;
+  color: #4f4f4f;
+  margin-bottom: 0.9em;
+}
+.add-photo-modal input {
+  height: 5.5rem;
+  max-height: 5.5rem;
+  margin-bottom: 1.8em;
+  padding: 0 1.8em;
+  border: 1px solid #4f4f4f;
+  border-radius: 12px;
+  filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
+}
+.add-photo-modal input::placeholder {
+  color: #bdbdbd;
+}
+.add-photo-modal .buttons {
+  text-align: end;
+  height: 5.5rem;
+}
+.add-photo-modal .buttons button {
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+}
+.add-photo-modal .buttons .cancel-btn {
+  color: #bdbdbd;
+  background-color: transparent;
+  padding: 0;
+  margin-right: 2.4rem;
+}
+.add-photo-modal .buttons .submit-btn {
+  color: white;
+  background-color: #3db46d;
+  width: 10rem;
+  height: 100%;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
 }

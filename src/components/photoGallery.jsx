@@ -8,7 +8,7 @@ const PhotoGallery = ({ images }) => {
   const [thirdColumn, setThirdColumn] = useState([]);
 
   useEffect(() => {
-    console.log("images:", images);
+    // console.log("images:", images);
     let firstColImages = [];
     let secondColImages = [];
     let thirdColImages = [];
@@ -27,7 +27,7 @@ const PhotoGallery = ({ images }) => {
     setThirdColumn(thirdColImages);
   }, [images]);
 
-  console.log({ firstColumn, secondColumn, thirdColumn });
+//   console.log({ firstColumn, secondColumn, thirdColumn });
 
   return (
     <div className="photo-gallery">
