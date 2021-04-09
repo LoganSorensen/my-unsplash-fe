@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 
 import Photo from "./photo";
 
-const PhotoGallery = ({ images }) => {
+const PhotoGallery = ({setImage, images }) => {
   const [firstColumn, setFirstColumn] = useState([]);
   const [secondColumn, setSecondColumn] = useState([]);
   const [thirdColumn, setThirdColumn] = useState([]);
 
   useEffect(() => {
-    // console.log("images:", images);
     let firstColImages = [];
     let secondColImages = [];
     let thirdColImages = [];
@@ -27,23 +26,21 @@ const PhotoGallery = ({ images }) => {
     setThirdColumn(thirdColImages);
   }, [images]);
 
-//   console.log({ firstColumn, secondColumn, thirdColumn });
-
   return (
     <div className="photo-gallery">
       <div className="column column-one">
         {firstColumn.map((image) => (
-          <Photo key={image._id} image={image} />
+          <Photo key={image._id} image={image} setImage={setImage} />
         ))}
       </div>
       <div className="column column-two">
         {secondColumn.map((image) => (
-          <Photo key={image._id} image={image} />
+          <Photo key={image._id} image={image} setImage={setImage} />
         ))}
       </div>
       <div className="column column-three">
         {thirdColumn.map((image) => (
-          <Photo key={image._id} image={image} />
+          <Photo key={image._id} image={image} setImage={setImage} />
         ))}
       </div>
     </div>

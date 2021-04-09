@@ -1,6 +1,7 @@
 import React from "react";
+import axios from "axios";
 
-const DeletePhotoModal = () => {
+const DeletePhotoModal = (props) => {
   const handleChange = (e) => {};
 
   const closeModal = () => {
@@ -14,7 +15,15 @@ const DeletePhotoModal = () => {
 
   const deletePhoto = (e) => {
     e.preventDefault();
-    console.log("deleting!");
+    console.log(props.selectedImageId);
+    axios
+      .delete(`http://localhost:5000/images/${props.selectedImageId}`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+    props.removeImage(props.selectedImageId);
+    closeModal();
   };
 
   return (

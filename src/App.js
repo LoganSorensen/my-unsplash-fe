@@ -8,6 +8,7 @@ import DeletePhotoModal from "./components/deletePhotoModal";
 
 function App() {
   const [images, setImages] = useState([]);
+  const [selectedImageId, setSelectedImageId] = useState();
 
   useEffect(() => {
     axios
@@ -18,12 +19,28 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
+  const setImage = (id) => {
+    setSelectedImageId(id);
+  };
+
+  const addImage = (image) => {
+    setImages([image, ...images])
+  }
+
+  const removeImage = (id) => {
+    const filteredImages = images.filter((image) => image._id !== id);
+    setImages(filteredImages);
+  };
+
   return (
     <div className="App">
       <Header />
-      <PhotoGallery images={images} />
-      <AddPhotoModal />
-      <DeletePhotoModal />
+      <PhotoGallery images={images} setImage={setImage} />
+      <AddPhotoModal addImage={addImage}/>
+      <DeletePhotoModal
+        selectedImageId={selectedImageId}
+        removeImage={removeImage}
+      />
     </div>
   );
 }

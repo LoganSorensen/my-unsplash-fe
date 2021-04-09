@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const AddPhotoModal = () => {
+const AddPhotoModal = (props) => {
   const [newPhoto, setNewPhoto] = useState({
     name: "",
     url: "",
@@ -18,11 +18,11 @@ const AddPhotoModal = () => {
 
   const addPhoto = (e) => {
     e.preventDefault();
-    console.log("submitting!", newPhoto);
     axios
       .post("http://localhost:5000/images", newPhoto)
       .then((res) => {
         console.log(res);
+        props.addImage(res.data.image)
         setNewPhoto({ name: "", url: "" });
       })
       .catch((err) => console.log(err));
