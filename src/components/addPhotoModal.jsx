@@ -19,7 +19,7 @@ const AddPhotoModal = (props) => {
   const addPhoto = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/images", newPhoto)
+      .post("https://my-unsplash-be.herokuapp.com/images", newPhoto)
       .then((res) => {
         props.addImage(res.data.image);
         setNewPhoto({ name: "", url: "" });

@@ -22,14 +22,17 @@ const DeletePhotoModal = (props) => {
   const deletePhoto = (e) => {
     e.preventDefault();
     axios
-      .delete(`http://localhost:5000/images/${props.selectedImageId}`, {
-        data: auth,
-      })
+      .delete(
+        `https://my-unsplash-be.herokuapp.com/images/${props.selectedImageId}`,
+        {
+          data: auth,
+        }
+      )
       .then((res) => {
         props.removeImage(props.selectedImageId);
-        setAuth({ password: "" });
       })
       .catch((err) => console.log(err));
+    setAuth({ password: "" });
     closeModal();
   };
 

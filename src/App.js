@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/images")
+      .get("https://my-unsplash-be.herokuapp.com/images")
       .then((res) => {
         setImages(res.data);
       })
