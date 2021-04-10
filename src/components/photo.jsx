@@ -1,6 +1,6 @@
 import React from "react";
 
-const Photo = ({ setImage, image }) => {
+const Photo = ({ setSelectedImageId, image }) => {
   const openModal = () => {
     const blackout = document.querySelector(".body-blackout");
     const deletePhotoModal = document.querySelector(".delete-photo-modal");
@@ -18,7 +18,14 @@ const Photo = ({ setImage, image }) => {
     <div className="photo">
       <div className="img-overlay">
         <div className="delete-btn-cont">
-          <button onClick={() => {openModal(); setImage(image._id);}}>delete</button>
+          <button
+            onClick={() => {
+              openModal();
+              setSelectedImageId(image._id);
+            }}
+          >
+            delete
+          </button>
         </div>
         <p>{image.name}</p>
       </div>

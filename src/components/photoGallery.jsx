@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Photo from "./photo";
 
-const PhotoGallery = ({setImage, images }) => {
+const PhotoGallery = ({ setSelectedImageId, images }) => {
   const [firstColumn, setFirstColumn] = useState([]);
   const [secondColumn, setSecondColumn] = useState([]);
   const [thirdColumn, setThirdColumn] = useState([]);
@@ -30,17 +30,29 @@ const PhotoGallery = ({setImage, images }) => {
     <div className="photo-gallery">
       <div className="column column-one">
         {firstColumn.map((image) => (
-          <Photo key={image._id} image={image} setImage={setImage} />
+          <Photo
+            key={image._id}
+            image={image}
+            setSelectedImageId={setSelectedImageId}
+          />
         ))}
       </div>
       <div className="column column-two">
         {secondColumn.map((image) => (
-          <Photo key={image._id} image={image} setImage={setImage} />
+          <Photo
+            key={image._id}
+            image={image}
+            setSelectedImageId={setSelectedImageId}
+          />
         ))}
       </div>
       <div className="column column-three">
         {thirdColumn.map((image) => (
-          <Photo key={image._id} image={image} setImage={setImage} />
+          <Photo
+            key={image._id}
+            image={image}
+            setSelectedImageId={setSelectedImageId}
+          />
         ))}
       </div>
     </div>

@@ -8,6 +8,8 @@ import DeletePhotoModal from "./components/deletePhotoModal";
 
 function App() {
   const [images, setImages] = useState([]);
+  const [query, setQuery] = useState("");
+  const [filteredImages, setFilteredImages] = useState([]);
   const [selectedImageId, setSelectedImageId] = useState();
 
   useEffect(() => {
@@ -19,8 +21,16 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  const setImage = (id) => {
-    setSelectedImageId(id);
+  useEffect(() => {
+    filterImages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query]);
+
+  const filterImages = () => {
+    const filteredImages = images.filter((image) =>
+      image.name.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredImages(filteredImages);
   };
 
   const addImage = (image) => {
@@ -34,8 +44,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <PhotoGallery images={images} setImage={setImage} />
+      <Header setQuery={setQuery} />
+      <PhotoGallery
+        images={query === "" ? images : filteredImages}
+        setSelectedImageId={setSelectedImageId}
+      />
       <AddPhotoModal addImage={addImage} />
       <DeletePhotoModal
         selectedImageId={selectedImageId}

@@ -3,13 +3,13 @@ import React from "react";
 import { ReactComponent as Logo } from "../assets/my_unsplash_logo.svg";
 import Search from "./search";
 
-const Header = () => {
+const Header = (props) => {
   const openModal = () => {
     const blackout = document.querySelector(".body-blackout");
     const addPhotoModal = document.querySelector(".add-photo-modal");
 
     document.body.classList.add("no-scroll");
-    
+
     blackout.style.display = "block";
     blackout.style.top = `${window.scrollY}px`;
 
@@ -21,7 +21,7 @@ const Header = () => {
     <div className="header">
       <div className="logo-and-search">
         <Logo />
-        <Search />
+        <Search setQuery={props.setQuery} />
       </div>
       <button onClick={openModal}>Add a photo</button>
     </div>

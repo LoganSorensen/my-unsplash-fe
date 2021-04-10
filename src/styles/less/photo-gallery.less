@@ -1,13 +1,13 @@
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-gap: 4.5em;
+  grid-gap: 5em;
   align-items: start;
 
   .column {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    grid-row-gap: 4.5em;
+    grid-row-gap: 5em;
   }
 
   .photo {
@@ -24,7 +24,6 @@
 
   .img-overlay {
     display: none;
-    // display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
